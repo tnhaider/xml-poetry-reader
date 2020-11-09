@@ -305,7 +305,10 @@ def concatenate_words(tokenized):
 
 
 
-def get_versification(meter_line):
+def get_versification(meter_line, type='f'):
+        # full = f
+        # short = s
+        # intermediate = i
         meter = ''.join(meter_line)
         meter = re.sub('\+', 'I', meter)
         meter = re.sub('\-', 'o', meter)
@@ -456,15 +459,21 @@ def get_versification(meter_line):
                 #if label == 'chol.iamb':
                 #       result = pattern.search(meter)
                 hebungen = meter.count('I')
-                counters = {0:'zero', 1:'single', 2:'di', 3:'tri', 4:'tetra', 5:'penta', 6:'hexa', 7:'septa', 8:'octa'}
-                if hebungen > 8:
-                        hebungen_label = 'octa.plus'
+                counters = {0:'zero', 1:'single', 2:'di', 3:'tri', 4:'tetra', 5:'penta', 6:'hexa', 7:'septa'}
+                if hebungen > 6:
+                        hebungen_label = 'septa.plus'
                 else:
                         hebungen_label = counters[hebungen]
                 if 'relaxed' in label:
                         label = re.sub('.relaxed', '.' + hebungen_label + '.relaxed', label)
                 if result != None:
-                        return label
+                        split = label.split('.')
+                        if type = 's':
+                                return split[0]
+                        if type = 'i':
+                                return '.'.join(split[:2])
+                        else:
+                                return label
         else: return 'other'
 
 
