@@ -468,9 +468,9 @@ def get_versification(meter_line, measure_type='f'):
                         label = re.sub('.relaxed', '.' + hebungen_label + '.relaxed', label)
                 if result != None:
                         split = label.split('.')
-                        if type = 's':
+                        if measure_type = 's':
                                 return split[0]
-                        if type = 'i':
+                        if measure_type = 'i':
                                 return '.'.join(split[:2])
                         else:
                                 return label
