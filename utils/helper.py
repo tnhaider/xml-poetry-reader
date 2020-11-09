@@ -305,7 +305,7 @@ def concatenate_words(tokenized):
 
 
 
-def get_versification(meter_line, type='f'):
+def get_versification(meter_line, measure_type='f'):
         # full = f
         # short = s
         # intermediate = i
