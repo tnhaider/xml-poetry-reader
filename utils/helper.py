@@ -472,7 +472,7 @@ def get_versification(meter_line, measure_type='f', greek_forms=True):
                 verses.update(verses3)
         if greek_forms == True:
                 verses.update(verses1)
-                verses.update(greed)
+                verses.update(greek)
                 verses.update(verses2)
                 verses.update(adoneus)
                 verses.update(verses3)
